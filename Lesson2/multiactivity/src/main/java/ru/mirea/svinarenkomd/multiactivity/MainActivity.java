@@ -1,7 +1,10 @@
-package ru.mirea.svinarenkomd.activitylifecycle;
+package ru.mirea.svinarenkomd.multiactivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +22,18 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "onCreate()");
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        editText = findViewById(R.id.editTextText);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void onClickNewActivity(View view) {
+        Intent intent = new Intent(this, SecondActivity.class);
+        intent.putExtra("key", "MIREA - Свинаренко Михаил Дмитриевич СТУДЕНТ");
+        startActivity(intent);
     }
 
     @Override
@@ -50,32 +61,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        Log.i(TAG, "onSaveInstanceState()");
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "onDestroy()");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i(TAG, "onRestart()");
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        Log.i(TAG, "onRestoreInstanceState()");
-    }
-
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        Log.i(TAG, "onPostCreate()");
     }
 }
