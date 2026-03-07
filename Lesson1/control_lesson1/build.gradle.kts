@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "ru.mirea.svinarenkomd.control_lesson1"
-        minSdk = 36
+        minSdk = 26
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
