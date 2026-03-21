@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "ru.mirea.svinarenkomd.dialog-mergeDebugResources-28:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\mdsv\\.gradle\\caches\\9.2.1\\transforms\\9ddd80d4cec68b3798dedd23abecbba4\\workspace\\transformed\\material-1.11.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "64",
+                        "endOffsets": "115"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+ru.mirea.svinarenkomd.dialog
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id button_date_picker
+id button_progress_dialog
+id button_show_dialog
+id button_time_picker
+id main
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base_Theme_Lesson2
+style Theme_Lesson2

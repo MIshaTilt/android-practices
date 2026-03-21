@@ -1,0 +1,15 @@
+ru.mirea.svinarenkomd.multiactivity
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id button
+id editTextText
+id main
+id textView
+layout activity_main
+layout activity_second
+mipmap ic_launcher
+string app_name
+style Base_Theme_Lesson2
+style Theme_Lesson2
