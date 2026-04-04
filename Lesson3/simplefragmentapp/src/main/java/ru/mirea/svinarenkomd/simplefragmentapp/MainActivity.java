@@ -1,0 +1,62 @@
+package ru.mirea.svinarenkomd.simplefragmentapp;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentManager;
+
+public class MainActivity extends AppCompatActivity {
+    private FragmentManager fragmentManager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        View mainView = findViewById(R.id.main);
+        if (mainView != null) {
+            ViewCompat.setOnApplyWindowInsetsListener(mainView, (v, insets) -> {
+                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                return insets;
+            });
+        }
+
+        fragmentManager = getSupportFragmentManager();
+
+        Button btnFirstFragment = findViewById(R.id.btnFirstFragment);
+        Button btnSecondFragment = findViewById(R.id.btnSecondFragment);
+
+        if (btnFirstFragment != null) {
+            btnFirstFragment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (findViewById(R.id.fragmentContainer) != null) {
+                        fragmentManager.beginTransaction()
+                                .replace(R.id.fragmentContainer, new FirstFragment())
+                                .commit();
+                    }
+                }
+            });
+        }
+
+        if (btnSecondFragment != null) {
+            btnSecondFragment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (findViewById(R.id.fragmentContainer) != null) {
+                        fragmentManager.beginTransaction()
+                                .replace(R.id.fragmentContainer, new SecondFragment())
+                                .commit();
+                    }
+                }
+            });
+        }
+    }
+}
