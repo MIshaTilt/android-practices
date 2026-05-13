@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_data">
+
+    <fragment
+        android:id="@+id/nav_data"
+        android:name="ru.mirea.svinarenkomd.mireaproject.DataFragment"
+        android:label="Информация об отрасли"
+        tools:layout="@layout/fragment_data" />
+
+    <fragment
+        android:id="@+id/nav_webview"
+        android:name="ru.mirea.svinarenkomd.mireaproject.WebViewFragment"
+        android:label="Встроенный браузер"
+        tools:layout="@layout/fragment_web_view" />
+
+    <fragment
+        android:id="@+id/nav_worker"
+        android:name="ru.mirea.svinarenkomd.mireaproject.WorkerFragment"
+        android:label="Фоновая задача"
+        tools:layout="@layout/fragment_worker" />
+    <fragment
+        android:id="@+id/nav_sensor"
+        android:name="ru.mirea.svinarenkomd.mireaproject.SensorFragment"
+        android:label="Акселерометр"
+        tools:layout="@layout/fragment_sensor" />
+
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="ru.mirea.svinarenkomd.mireaproject.CameraFragment"
+        android:label="Камера"
+        tools:layout="@layout/fragment_camera" />
+
+    <fragment
+        android:id="@+id/nav_audio"
+        android:name="ru.mirea.svinarenkomd.mireaproject.AudioFragment"
+        android:label="Диктофон"
+        tools:layout="@layout/fragment_audio" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="ru.mirea.svinarenkomd.mireaproject.ProfileFragment"
+        android:label="Профиль"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_file_work"
+        android:name="ru.mirea.svinarenkomd.mireaproject.FileWorkFragment"
+        android:label="Работа с файлами"
+        tools:layout="@layout/fragment_file_work" />
+    <fragment
+        android:id="@+id/nav_network"
+        android:name="ru.mirea.svinarenkomd.mireaproject.NetworkFragment"
+        android:label="Сеть (Retrofit)"
+        tools:layout="@layout/fragment_network" />
+    <fragment
+        android:id="@+id/nav_places"
+        android:name="ru.mirea.svinarenkomd.mireaproject.PlacesFragment"
+        android:label="Карта"
+        tools:layout="@layout/fragment_places" />
+</navigation>
